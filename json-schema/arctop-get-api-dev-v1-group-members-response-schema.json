@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/arctop/main/json-schema/arctop-get-api-dev-v1-group-members-response-schema.json",
+  "title": "GetApiDevV1GroupMembersResponse",
+  "x-generated": "2026-09-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/arctop-openapi-generated.yml#/components/schemas/GetApiDevV1GroupMembersResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "User UUID"
+    },
+    "email": {
+      "type": "string",
+      "description": "User email"
+    },
+    "name": {
+      "type": "string",
+      "description": "User display name"
+    },
+    "role": {
+      "type": "string",
+      "description": "`admin` or `member`"
+    },
+    "joined_at": {
+      "type": "string",
+      "description": "Timestamp when the user joined the group"
+    }
+  }
+}

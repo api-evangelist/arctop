@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "@vocab": "https://arctop.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "arctop": "https://arctop.com/schema#",
+    "PostRequest": "arctop:PostRequest",
+    "event_type": {
+      "@id": "arctop:event_type",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "arctop:label",
+      "@type": "xsd:string"
+    },
+    "PostResponse": "arctop:PostResponse",
+    "marker": {
+      "@id": "arctop:marker"
+    },
+    "results": {
+      "@id": "arctop:results",
+      "@container": "@list"
+    },
+    "GetApiDevV1GroupMembersResponse": "arctop:GetApiDevV1GroupMembersResponse",
+    "id": {
+      "@id": "arctop:id",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "arctop:email",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "arctop:name",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "arctop:role",
+      "@type": "xsd:string"
+    },
+    "joined_at": {
+      "@id": "arctop:joined_at",
+      "@type": "xsd:string"
+    },
+    "PostApiDevV1SessionsCurrentMarkersRequest": "arctop:PostApiDevV1SessionsCurrentMarkersRequest",
+    "timestamp": {
+      "@id": "arctop:timestamp",
+      "@type": "xsd:integer"
+    },
+    "PostApiDevV1SessionsCurrentMarkersResponse": "arctop:PostApiDevV1SessionsCurrentMarkersResponse",
+    "marker.timestamp": {
+      "@id": "arctop:marker.timestamp",
+      "@type": "xsd:integer"
+    },
+    "marker.app_id": {
+      "@id": "arctop:marker.app_id",
+      "@type": "xsd:string"
+    },
+    "marker.event_type": {
+      "@id": "arctop:marker.event_type",
+      "@type": "xsd:string"
+    },
+    "marker.label": {
+      "@id": "arctop:marker.label",
+      "@type": "xsd:string"
+    },
+    "GetApiDevV1SessionsIdResponse": "arctop:GetApiDevV1SessionsIdResponse",
+    "agent_version": {
+      "@id": "arctop:agent_version",
+      "@type": "xsd:string"
+    },
+    "error_message": {
+      "@id": "arctop:error_message",
+      "@type": "xsd:string"
+    },
+    "output_file_count": {
+      "@id": "arctop:output_file_count",
+      "@type": "xsd:integer"
+    },
+    "GetApiDevV1SessionsIdIdResponse": "arctop:GetApiDevV1SessionsIdIdResponse",
+    "user_id": {
+      "@id": "arctop:user_id",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Arctop API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Arctop's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-25) from openapi/_ae-authored/arctop-openapi-generated.yml.",
+  "dcterms:created": "2026-09-25",
+  "dcterms:source": [
+    "openapi/_ae-authored/arctop-openapi-generated.yml"
+  ]
+}

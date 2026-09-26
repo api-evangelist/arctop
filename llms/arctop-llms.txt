@@ -1,0 +1,8 @@
+# Arctop
+
+> Arctop is a brain-computer interface platform. This server hosts the Arctop dashboard and the Arctop developer API.
+
+## Docs
+
+- [Developer API reference](https://hegemon42.arctop.com/api/dev/v1/docs): the complete /api/dev/v1 contract in plain markdown, served without authentication. Requests authenticate with an Authorization: Bearer header carrying an API key created at https://hegemon42.arctop.com/dashboard/developers/keys.
+- [Developer API reference, rendered](https://hegemon42.arctop.com/docs): the same document as a browsable page, for people.

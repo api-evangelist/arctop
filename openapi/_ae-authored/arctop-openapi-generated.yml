@@ -1,0 +1,320 @@
+openapi: 3.1.0
+info:
+  title: Arctop API
+  version: '2026-09-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-25: 8 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Arctop has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 6
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://hegemon42.arctop.com/api/dev/v1/docs
+servers:
+- url: https://<origin
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -H "Authorization: Bearer $ARCTOP_API_KEY"  "https://<origin>/api/dev/v1/me"
+
+          ```'
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST -H "Authorization: Bearer $ARCTOP_API_KEY"  -H "Content-Type: application/json"  -d ''{"event_type":"stimulus","label":"face-07"}''  "https://<origin>/api/dev/v1/sessions/current/markers"
+
+          ```'
+  /api/dev/v1/group/members:
+    get:
+      operationId: get_api_dev_v1_group_members
+      tags:
+      - Api
+      summary: Group keys only; returns the current roster of the group the key acts for.
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiDevV1GroupMembersResponse'
+      x-evidence:
+        kind: documentation
+  /api/dev/v1/sessions/current/markers:
+    post:
+      operationId: post_api_dev_v1_sessions_current_markers
+      tags:
+      - Api
+      summary: Stamps a marker into one or more currently live recordings.
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      parameters:
+      - name: user_id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Repeatable; target user(s) for the marker
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiDevV1SessionsCurrentMarkersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiDevV1SessionsCurrentMarkersResponse'
+      x-evidence:
+        kind: documentation
+  /api/dev/v1/sessions/{id}:
+    get:
+      operationId: get_api_dev_v1_sessions_id
+      tags:
+      - Api
+      summary: 'One session: the list shape plus `agent_version`, `error_message`, and `output_file_count`.'
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiDevV1SessionsIdResponse'
+      x-evidence:
+        kind: documentation
+  /api/dev/v1/sessions/{id}/outputs/{filename}:
+    get:
+      operationId: get_api_dev_v1_sessions_id_outputs_filename
+      tags:
+      - Api
+      summary: Downloads one score CSV (`text/csv`, sent as an attachment).
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api/dev/v1/sessions/{id}/{id}:
+    get:
+      operationId: get_api_dev_v1_sessions_id_id
+      tags:
+      - Api
+      summary: Marker events for the session, ordered by `timestamp` ascending.
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiDevV1SessionsIdIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at id
+  /api/dev/v1/{v1id}:
+    get:
+      operationId: get_api_dev_v1_v1id
+      tags:
+      - Api
+      summary: This reference, as plain markdown (`text/markdown`). The only path that answers without a key.
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      parameters:
+      - name: v1id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 4 example path(s) differing only at v1Id
+components:
+  schemas:
+    PostRequest:
+      type: object
+      properties:
+        event_type:
+          type: string
+        label:
+          type: string
+    PostResponse:
+      type: object
+      properties:
+        marker:
+          type: object
+          properties:
+            timestamp:
+              type: integer
+            app_id:
+              type: string
+            event_type:
+              type: string
+            label:
+              type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+              status:
+                type: string
+              session_id:
+                type: string
+    GetApiDevV1GroupMembersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: User UUID
+        email:
+          type: string
+          description: User email
+        name:
+          type: string
+          description: User display name
+        role:
+          type: string
+          description: '`admin` or `member`'
+        joined_at:
+          type: string
+          description: Timestamp when the user joined the group
+    PostApiDevV1SessionsCurrentMarkersRequest:
+      type: object
+      properties:
+        event_type:
+          type: string
+          description: Type of the marker event
+        label:
+          type: string
+          description: Optional label for the marker
+        timestamp:
+          type: integer
+          description: Epoch milliseconds; defaults to arrival time
+      required:
+      - event_type
+    PostApiDevV1SessionsCurrentMarkersResponse:
+      type: object
+      properties:
+        marker.timestamp:
+          type: integer
+          description: Timestamp stored
+        marker.app_id:
+          type: string
+          description: '`dev_api`'
+        marker.event_type:
+          type: string
+          description: '`dev_marker`'
+        marker.label:
+          type: string
+          description: Composed label `event_type:label`
+        results:
+          type: array
+          description: Per‑target write results
+    GetApiDevV1SessionsIdResponse:
+      type: object
+      properties:
+        agent_version:
+          type: string
+          description: Version of the recording agent
+        error_message:
+          type: string
+          description: Error message if any
+        output_file_count:
+          type: integer
+          description: Number of output files
+    GetApiDevV1SessionsIdIdResponse:
+      type: object
+      properties:
+        event_type:
+          type: string
+          description: '`user_marker`, `wear_state`, or `dev_marker`'
+        timestamp:
+          type: integer
+          description: Epoch milliseconds
+        label:
+          type: string
+          description: Marker label
+        user_id:
+          type: string
+          description: User who generated the marker
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api

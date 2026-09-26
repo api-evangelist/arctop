@@ -1,0 +1,34 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://arctop.com/",
+      "describedby": [
+        { "href": "https://arctop.com/llms.txt", "type": "text/plain" }
+      ],
+      "service-doc": [
+        { "href": "https://arctop.com/deep-dives", "type": "text/html" }
+      ],
+      "service-meta": [
+        { "href": "https://arctop.com/sitemap.xml", "type": "application/xml" }
+      ],
+      "related": [
+        { "href": "https://github.com/arctop", "title": "Arctop SDK repositories (iOS, Android, Unity)" }
+      ]
+    },
+    {
+      "anchor": "https://docs.arctop.com/",
+      "service-doc": [
+        { "href": "https://docs.arctop.com/", "type": "text/html" }
+      ],
+      "service-desc": [
+        { "href": "https://docs.arctop.com/api/dev/v1/docs", "type": "text/markdown" }
+      ],
+      "describedby": [
+        { "href": "https://docs.arctop.com/llms.txt", "type": "text/plain" }
+      ],
+      "related": [
+        { "href": "https://github.com/arctop/api-examples", "title": "Runnable examples for the Arctop developer API" }
+      ]
+    }
+  ]
+}

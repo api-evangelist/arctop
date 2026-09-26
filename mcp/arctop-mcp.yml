@@ -1,0 +1,54 @@
+generated: '2026-09-26'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/arctop-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: No MCP server was found. The pre-flight posted tools/list to /mcp on api.arctop.com, arctop.com, docs.arctop.com; verdict absent. Candidate
+  tools below are derived from the 8 operation(s) in the provider's own OpenAPI (8 listed); they describe what a server WOULD expose, not one
+  that exists.
+tools:
+- name: get
+  operationId: get
+  method: GET
+  path: /
+  description: GET /
+- name: post
+  operationId: post
+  method: POST
+  path: /
+  description: POST /
+- name: get_api_dev_v1_group_members
+  operationId: get_api_dev_v1_group_members
+  method: GET
+  path: /api/dev/v1/group/members
+  description: Group keys only; returns the current roster of the group the key acts for.
+- name: post_api_dev_v1_sessions_current_markers
+  operationId: post_api_dev_v1_sessions_current_markers
+  method: POST
+  path: /api/dev/v1/sessions/current/markers
+  description: Stamps a marker into one or more currently live recordings.
+- name: get_api_dev_v1_sessions_id
+  operationId: get_api_dev_v1_sessions_id
+  method: GET
+  path: /api/dev/v1/sessions/{id}
+  description: 'One session: the list shape plus `agent_version`, `error_message`, and `output_file_count`.'
+- name: get_api_dev_v1_sessions_id_outputs_filename
+  operationId: get_api_dev_v1_sessions_id_outputs_filename
+  method: GET
+  path: /api/dev/v1/sessions/{id}/outputs/{filename}
+  description: Downloads one score CSV (`text/csv`, sent as an attachment).
+- name: get_api_dev_v1_sessions_id_id
+  operationId: get_api_dev_v1_sessions_id_id
+  method: GET
+  path: /api/dev/v1/sessions/{id}/{id}
+  description: Marker events for the session, ordered by `timestamp` ascending.
+- name: get_api_dev_v1_v1id
+  operationId: get_api_dev_v1_v1id
+  method: GET
+  path: /api/dev/v1/{v1id}
+  description: This reference, as plain markdown (`text/markdown`). The only path that answers without a key.

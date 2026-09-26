@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/arctop/main/json-schema/arctop-post-api-dev-v1-sessions-current-markers-request-schema.json",
+  "title": "PostApiDevV1SessionsCurrentMarkersRequest",
+  "x-generated": "2026-09-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/arctop-openapi-generated.yml#/components/schemas/PostApiDevV1SessionsCurrentMarkersRequest",
+  "type": "object",
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "description": "Type of the marker event"
+    },
+    "label": {
+      "type": "string",
+      "description": "Optional label for the marker"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Epoch milliseconds; defaults to arrival time"
+    }
+  },
+  "required": [
+    "event_type"
+  ]
+}

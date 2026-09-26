@@ -1,23 +1,109 @@
 aid: arctop
+
 name: Arctop
-description: 'Arctop is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Arctop develops brain‑computer interface technology to decode and understand brain activity. The company builds APIs that expose
+  neural data, enabling developers to create applications that interpret human thoughts, emotions, and intentions in real time, advancing healthcare,
+  research, and human‑computer interaction.
+
 url: https://raw.githubusercontent.com/api-evangelist/arctop/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
+image: https://arctop.com/assets/brand/social-card.jpg
+
 tags:
-- Company
-apis: []
+- Brain-Computer Interface
+- Neural Data
+- API Platform
+- Healthcare
+- Research
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/arctop-rules.yml
+- type: JSONLD
+  url: json-ld/arctop-context.jsonld
+- type: Vocabulary
+  url: vocabulary/arctop-vocabulary.yml
+- type: DataModel
+  url: data-model/arctop-data-model.yml
+- type: Conformance
+  url: conformance/arctop-conformance.yml
+- type: LLMsTxt
+  url: llms/arctop-llms.txt
+- type: WellKnown
+  url: well-known/arctop-well-known.yml
+- type: Hosts
+  url: hosts/arctop-hosts.yml
+- type: Vendors
+  url: vendors/arctop-vendors.yml
+- type: TermsOfService
+  url: https://arctop.com/terms
+- type: PrivacyPolicy
+  url: https://arctop.com/privacy
+- type: Documentation
+  url: https://docs.arctop.com/
+- type: DomainSecurity
+  url: security/arctop-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://arctop.com
+
+apis:
+- aid: arctop:arctop-api
+  name: Arctop API
+  description: 'Arctop API as documented publicly: 8 operations. Contract generated from the documentation by API Evangelist (2026-09-25); not
+    the provider''s own document.'
+  humanURL: https://hegemon42.arctop.com/api/dev/v1/docs
+  baseURL: https://<origin
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/arctop-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-group-members-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-sessions-id-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-request-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-sessions-id-response-schema.json
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-09-25'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 20
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
