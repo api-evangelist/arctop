@@ -67,16 +67,16 @@ common:
   url: https://arctop.com
 
 apis:
-- aid: arctop:arctop-api
-  name: Arctop API
-  description: 'Arctop API as documented publicly: 8 operations. Contract generated from the documentation by API Evangelist (2026-09-25); not
-    the provider''s own document.'
+- aid: arctop:arctop-arctop-api-api
+  name: Arctop Arctop API
+  description: The Arctop API API from Arctop — 1 operation(s) for arctop api.
   humanURL: https://hegemon42.arctop.com/api/dev/v1/docs
   baseURL: https://<origin
+  tags:
+  - Arctop API
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/arctop-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/arctop-arctop-api-api-openapi.yml
   - type: JSONSchema
     url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-response-schema.json
   - type: JSONSchema
@@ -89,7 +89,28 @@ apis:
     url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-request-schema.json
   - type: JSONSchema
     url: json-schema/arctop-get-api-dev-v1-sessions-id-response-schema.json
-
+- aid: arctop:arctop-dev-api
+  name: Arctop Dev API
+  description: The Dev API from Arctop — 6 operation(s) for dev.
+  humanURL: https://hegemon42.arctop.com/api/dev/v1/docs
+  baseURL: https://<origin
+  tags:
+  - Dev
+  properties:
+  - type: OpenAPI
+    url: openapi/arctop-dev-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-group-members-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-sessions-id-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-post-api-dev-v1-sessions-current-markers-request-schema.json
+  - type: JSONSchema
+    url: json-schema/arctop-get-api-dev-v1-sessions-id-response-schema.json
 x-coverage:
   state: none
   reason: no-developer-program

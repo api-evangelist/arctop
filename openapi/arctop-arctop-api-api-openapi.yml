@@ -1,0 +1,104 @@
+openapi: 3.2.0
+info:
+  title: Arctop API
+  version: '2026-09-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-25: 8 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Arctop has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 6
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://hegemon42.arctop.com/api/dev/v1/docs
+servers:
+- url: https://<origin
+security:
+- bearer: []
+tags:
+- name: Arctop API
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Arctop API
+      summary: GET /
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -H "Authorization: Bearer $ARCTOP_API_KEY"  "https://<origin>/api/dev/v1/me"
+
+          ```'
+    post:
+      operationId: post
+      tags:
+      - Arctop API
+      summary: POST /
+      x-source: https://hegemon42.arctop.com/api/dev/v1/docs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST -H "Authorization: Bearer $ARCTOP_API_KEY"  -H "Content-Type: application/json"  -d ''{"event_type":"stimulus","label":"face-07"}''  "https://<origin>/api/dev/v1/sessions/current/markers"
+
+          ```'
+components:
+  schemas:
+    PostResponse:
+      type: object
+      properties:
+        marker:
+          type: object
+          properties:
+            timestamp:
+              type: integer
+            app_id:
+              type: string
+            event_type:
+              type: string
+            label:
+              type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+              status:
+                type: string
+              session_id:
+                type: string
+    PostRequest:
+      type: object
+      properties:
+        event_type:
+          type: string
+        label:
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
