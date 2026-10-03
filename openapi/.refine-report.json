@@ -23,7 +23,10 @@
     "arctop-openapi-generated.yml: tagged paths GET /api/dev/v1/{v1id} -> Dev",
     "arctop-openapi-generated.yml: declared missing tag: Arctop API",
     "arctop-openapi-generated.yml: declared missing tag: Dev",
-    "apis.yml register: written (+2 apis, 2 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "arctop-arctop-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "arctop-dev-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
