@@ -162,53 +162,6 @@ paths:
         collapsed_from: 4 example path(s) differing only at v1Id
 components:
   schemas:
-    GetApiDevV1GroupMembersResponse:
-      type: object
-      properties:
-        id:
-          type: string
-          description: User UUID
-        email:
-          type: string
-          description: User email
-        name:
-          type: string
-          description: User display name
-        role:
-          type: string
-          description: '`admin` or `member`'
-        joined_at:
-          type: string
-          description: Timestamp when the user joined the group
-    GetApiDevV1SessionsIdIdResponse:
-      type: object
-      properties:
-        event_type:
-          type: string
-          description: '`user_marker`, `wear_state`, or `dev_marker`'
-        timestamp:
-          type: integer
-          description: Epoch milliseconds
-        label:
-          type: string
-          description: Marker label
-        user_id:
-          type: string
-          description: User who generated the marker
-    PostApiDevV1SessionsCurrentMarkersRequest:
-      type: object
-      properties:
-        event_type:
-          type: string
-          description: Type of the marker event
-        label:
-          type: string
-          description: Optional label for the marker
-        timestamp:
-          type: integer
-          description: Epoch milliseconds; defaults to arrival time
-      required:
-      - event_type
     PostApiDevV1SessionsCurrentMarkersResponse:
       type: object
       properties:
@@ -227,6 +180,21 @@ components:
         results:
           type: array
           description: Per‑target write results
+    GetApiDevV1SessionsIdIdResponse:
+      type: object
+      properties:
+        event_type:
+          type: string
+          description: '`user_marker`, `wear_state`, or `dev_marker`'
+        timestamp:
+          type: integer
+          description: Epoch milliseconds
+        label:
+          type: string
+          description: Marker label
+        user_id:
+          type: string
+          description: User who generated the marker
     GetApiDevV1SessionsIdResponse:
       type: object
       properties:
@@ -239,6 +207,38 @@ components:
         output_file_count:
           type: integer
           description: Number of output files
+    GetApiDevV1GroupMembersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          description: User UUID
+        email:
+          type: string
+          description: User email
+        name:
+          type: string
+          description: User display name
+        role:
+          type: string
+          description: '`admin` or `member`'
+        joined_at:
+          type: string
+          description: Timestamp when the user joined the group
+    PostApiDevV1SessionsCurrentMarkersRequest:
+      type: object
+      properties:
+        event_type:
+          type: string
+          description: Type of the marker event
+        label:
+          type: string
+          description: Optional label for the marker
+        timestamp:
+          type: integer
+          description: Epoch milliseconds; defaults to arrival time
+      required:
+      - event_type
   securitySchemes:
     bearer:
       type: http
